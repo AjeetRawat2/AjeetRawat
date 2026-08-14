@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scroll-in reveal animation (replaces Framer Motion whileInView) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.from-left {
+  transform: translateX(-40px);
+}
+.reveal.from-left.is-visible {
+  transform: translateX(0);
+}
+.reveal.from-right {
+  transform: translateX(40px);
+}
+.reveal.from-right.is-visible {
+  transform: translateX(0);
+}
+.reveal.scale {
+  transform: scale(0.92);
+}
+.reveal.scale.is-visible {
+  transform: scale(1);
+}
+
+/* Float animation for decorative badges */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes floatYAlt {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+.animate-float { animation: floatY 3s ease-in-out infinite; }
+.animate-float-alt { animation: floatYAlt 3s ease-in-out 0.5s infinite; }
+
+/* Bounce down arrow */
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+.animate-bounce-down { animation: bounceDown 2s ease-in-out infinite; }
+
+/* Spinner */
+@keyframes spin360 {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin360 1s linear infinite; }
+
+/* Proficiency bar grow handled inline via transition on width */
+.bar-fill {
+  transition: width 1s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb { background: #334155; }
