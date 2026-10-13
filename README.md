@@ -21,7 +21,11 @@ The published site lives in `portfolio/`:
 - `portfolio/main.js` — interactions and resume-based Remi responses
 - `portfolio/CNAME` — custom domain for GitHub Pages
 
-The repository also contains the original Vite/React source in `src/`. GitHub Pages currently publishes the static site from `portfolio/`.
+## Previous build
+
+The repository also retains the earlier portfolio build, which used **React, TypeScript, Vite, Tailwind CSS, and Supabase**. Its source and project configuration remain in `src/` and the repository root.
+
+GitHub Pages now publishes the static resume portfolio from `portfolio/`. The earlier React/Vite build is retained as source code and is not the version currently served on the live site.
 
 ## Update the portfolio
 
